@@ -12,8 +12,8 @@ int main()
         }
     }
     if(k == 1)
-        printf("Yes");
+        printf("YES");
     else
-        printf("No");
+        printf("NO");
     return 0;
 }
