@@ -3,17 +3,38 @@
 
 int main()
 {
-    int n;
-    scanf("%d", &n);
-    int k = 1;
-    for(int i = 2; i < n && i%n!=0; i++){
-        if((n % i) == 0){
-           k = 0;
+    int n, m;
+    scanf("%d %d", &n, &m);
+    int a1, a2, a3, a4, b1, b2, b3, b4;
+    a1 = n / 1000;
+    a2 = (n - a1 * 1000) / 100;
+    a3 = (n - a1 * 1000 - a2 * 100) / 10;
+    a4 = (n - a1 * 1000 - a2 * 100 - a3 * 10);
+
+    b1 = n / 1000;
+    b2 = (n - b1 * 1000) / 100;
+    b3 = (n - b1 * 1000 - b2 * 100) / 10;
+    b4 = (n - b1 * 1000 - b2 * 100 - b3 * 10);
+
+    int N, M;
+    N = a1 + a2 + a3 + a4;
+    M = b1 + b2 + b3 + b4;
+
+    if(N>M){
+        printf("%d\n",m);
+    }
+    else if(N<M){
+        printf("%d\n",n);
+    }
+    else{
+        if(n>m){
+            printf("%d\n",m);
+        }
+        else if(n<m){
+            printf("%d\n",n);
+        }
+        else{
+            printf("%d\n %d\n",n,m);
         }
     }
-    if(k == 1)
-        printf("YES");
-    else
-        printf("NO");
-    return 0;
 }
