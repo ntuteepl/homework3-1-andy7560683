@@ -3,17 +3,47 @@
 
 int main()
 {
-    int n;
-    scanf("%d", &n);
-    int k = 1;
-    for(int i = 2; i < n && i%n!=0; i++){
-        if((n % i) == 0){
-           k = 0;
+    int a1, a2, b1, b2, m1 ,m2, t1, t2, t3, t4, A, B;
+    scanf("%d", &a1);
+    while(a1 < 0000 || a1 > 9999){
+        scanf("%d", &a1);
+    }
+    int x;
+    for(x = 0; x < 2; x++){
+        x = 0;
+        scanf("%d", &a2);
+        if(a2 == 0){
+            break;
         }
     }
-    if(k == 1)
-        printf("YES");
-    else
-        printf("NO");
-    return 0;
+    b1 = a1;
+    b2 = a2;
+    A = 0;
+    B = 0;
+
+    int i;
+    int j;
+    for(i = 0; i < 4; i++){
+        m1 = b1 % 10;
+        m2 = b2 % 10;
+        if(m1 == m2){
+            A++;
+        }
+        else{
+            t1 = a1;
+            t2 = b2;
+        for(j = 0; j < 4; j++){
+            t3 = t1 % 10;
+            t4 = t2 % 10;
+            if(t3 == m2){
+                B++;
+            }
+            t1 /= 10;
+            t2 /= 10;
+        }
+    }
+    b1 /= 10;
+    b2 /= 10;
+}
+    printf("%dA%dB", A, B);
 }
