@@ -15,7 +15,7 @@ int main()
         if(a2 == 0){
             break;
         }
-    }
+
     b1 = a1;
     b2 = a2;
     A = 0;
@@ -46,4 +46,6 @@ int main()
     b2 /= 10;
 }
     printf("%dA%dB", A, B);
+
+}
 }
